@@ -331,7 +331,7 @@ button:disabled {
 .gallery-item.zoomed {
   transform: scale(2);  /* Zoom in the container */
   position: fixed;  /* Fix the container to the screen */
-  transform: translate(-40%, -94%) scale(1.81);  /* Center the zoomed container */
+  transform: translate(-40%, -150%) scale(1.81);  /* Center the zoomed container */
   z-index: 10;  /* Bring to the front */
   cursor: zoom-out;  /* Change cursor when zoomed in */
 }
