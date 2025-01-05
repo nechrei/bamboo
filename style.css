@@ -5,7 +5,7 @@ body {
 
   background-image: 
   /* Grid background (on top of gradient) */
-  repeating-linear-gradient(0deg, rgba(88, 182, 34, 0.619) 0, rgba(44, 151, 17, 0.1) 1px, transparent 1px, transparent 100%), 
+  repeating-linear-gradient(45deg, rgba(88, 182, 34, 0.619) 0, rgba(44, 151, 17, 0.1) 1px, transparent 1px, transparent 100%), 
   repeating-linear-gradient(90deg, rgba(94, 231, 39, 0.558) 0, rgba(78, 165, 67, 0.1) 1px, transparent 1px, transparent 100%),
   /* Gradient background */
   linear-gradient(to bottom, #f5f5dc, #90fcba);
@@ -134,24 +134,23 @@ p {
   text-shadow: 0 0 4px rgb(97, 238, 54), 0 0 18px rgba(91, 255, 76, 0.788); /* Shine effect */
 }
 
+
 .member {
-  position: relative; /* Make the parent a positioning context */
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-content: center;
   align-items: center;
+  background: linear-gradient(to bottom, #70ff70, #17b85a);
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(6, 24, 0, 0.1);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   padding: 1.5rem;
-  min-width: 90px;
-  max-width: 200px;
+  min-width: 90px; /* Minimum size for images */
+  max-width: 200px; /* Optional: Limit the card size */
   cursor: pointer;
-  background: linear-gradient(to bottom, #70ff70, #17b85a);
-  background-size: cover;
-  background-repeat: no-repeat;
-  overflow: hidden; /* Ensures transformed content does not overflow */
+  position: relative;
 }
 
 .member img {
@@ -160,39 +159,16 @@ p {
   border-radius: 50%;
   border: 3px solid #34f364;
   transition: transform 0.3s ease;
-  z-index: 2; /* Ensure it's on top of other elements */
-}
-.member:hover .overlay-image {
-  opacity: 0.45; /* Adjust transparency */
-  transform: scale(1.175);
-}
-.member .overlay-image {
-  position: absolute; /* Place it on top */
-  top: 0;
-  left: 0;
-  width: 100%; /* Match the size of the parent */
-  height: 100%; /* Match the size of the parent */
-  background-image: url('WebsiteArts01/bamboostick01.png');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.3; /* Adjust transparency */
-  z-index: 1; /* Keep it below the content but above the background */
-  pointer-events: none; /* Optional: Prevent interaction with this layer */
-  transition: transform 0.4s ease-out ;
 }
 
 .member img:hover {
   transform: scale(1.1);
 }
-.member:hover h3 {
-  transform: scale(1.15);
-}
+
 .member h3 {
   margin-top: 0.5rem;
   font-size:calc(12px + 1.5vw);
-  color: #86ffaee5;
-  z-index: 99;
-  transition: transform 0.1s ease-out ;
+  color: #00aa39;
 }
 
 /* Form Styles */

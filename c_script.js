@@ -9,6 +9,7 @@ const imageUrls = [
   "WebsiteArts01/bamboopack01.png",
   "WebsiteArts01/bamboopack02.png",
   "WebsiteArts01/bamboopack03.png",
+  "WebsiteArts01/bamboopack04.png"
 ];
 
 // Get the gallery element
