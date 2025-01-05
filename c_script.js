@@ -47,14 +47,21 @@ gallery.addEventListener('click', (event) => {
   // Check if the clicked target is an image inside a gallery-item div
   if (event.target && event.target.tagName === 'IMG') {
       const imageContainer = event.target.closest('.gallery-item'); // Get the div container
-      const image = event.target; // Get the image element
 
-      // If the image container is already zoomed in, unzoom it
-      if (imageContainer.classList.contains('zoomed')) {
-          imageContainer.classList.remove('zoomed');
-      } else {
-          // Otherwise, zoom in the image
+      // Check if there's already a zoomed-in container
+      const currentlyZoomed = document.querySelector('.gallery-item.zoomed');
+      
+      // If another container is zoomed in, zoom out of it
+      if (currentlyZoomed && currentlyZoomed !== imageContainer) {
+          currentlyZoomed.classList.remove('zoomed');
+      }
+
+      // If the clicked image is not already zoomed in, zoom it in
+      if (!imageContainer.classList.contains('zoomed')) {
           imageContainer.classList.add('zoomed');
+      } else {
+          // If it is already zoomed in, unzoom it
+          imageContainer.classList.remove('zoomed');
       }
   }
 });
