@@ -42,7 +42,7 @@ function loadImages() {
 // Call the function to load images when the page is ready
 window.onload = loadImages;
 
-// Add event listener to the parent gallery container
+
 gallery.addEventListener('click', (event) => {
   // Check if the clicked target is an image inside a gallery-item div
   if (event.target && event.target.tagName === 'IMG') {
@@ -59,8 +59,10 @@ gallery.addEventListener('click', (event) => {
       // If the clicked image is not already zoomed in, zoom it in
       if (!imageContainer.classList.contains('zoomed')) {
           imageContainer.classList.add('zoomed');
+          document.getElementById('vignette').classList.add('show'); // Add vignette effect
       } else {
           // If it is already zoomed in, unzoom it
+          document.getElementById('vignette').classList.remove('show'); // Remove vignette effect
           imageContainer.classList.remove('zoomed');
       }
   }

@@ -12,7 +12,6 @@ body {
   background-size: 40px 40px, 40px 40px, auto, 100% 100%;  /* Grid cell size for the grid lines, full size for the gradient */
   background-position: 0 0, 0 0, 0 0;  /* Position for all layers */
   background-repeat: repeat, repeat, no-repeat;  /* Repeat grid, repeat grid, but no-repeat for gradient */
-
   color: #cce5ff;
   overflow-x: hidden; /* Prevent horizontal scrolling */
   -webkit-user-select: none;  /* Safari/Chrome */
@@ -335,4 +334,23 @@ button:disabled {
   transform: translate(-40%, -94%) scale(1.81);  /* Center the zoomed container */
   z-index: 10;  /* Bring to the front */
   cursor: zoom-out;  /* Change cursor when zoomed in */
+}
+
+/* Vignette effect as a div */
+#vignette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, rgba(255, 248, 143, 0.199), rgba(24, 75, 1, 0.144)); /* Softer darkening effect */
+  z-index: 5; /* Make sure it's above the background but below the zoomed image */
+  pointer-events: none; /* Prevent interaction with the overlay */
+  transition: opacity 0.5s ease, background 0.5s ease; /* Smooth transition */
+  opacity: 0; /* Hidden by default */
+}
+
+/* Vignette visible state */
+#vignette.show {
+  opacity: 1; /* Display when the vignette is triggered */
 }
