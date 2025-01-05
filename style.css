@@ -133,27 +133,48 @@ p {
   color: #59ff54;
   text-shadow: 0 0 4px rgb(97, 238, 54), 0 0 18px rgba(91, 255, 76, 0.788); /* Shine effect */
 }
-
+.member:hover .overlay-image {
+  opacity: 0.45; /* Adjust transparency */
+  transform: scale(1.175);
+}
+.member .overlay-image {
+  position: absolute; /* Place it on top */
+  top: 0;
+  left: 0;
+  width: 100%; /* Match the size of the parent */
+  height: 100%; /* Match the size of the parent */
+  background-image: url('WebsiteArts01/bamboostick01.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3; /* Adjust transparency */
+  z-index: 1; /* Keep it below the content but above the background */
+  pointer-events: none; /* Optional: Prevent interaction with this layer */
+  transition: transform 0.4s ease-out ;
+}
 
 .member {
+  position: relative; /* Make the parent a positioning context */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
   align-items: center;
-  background: linear-gradient(to bottom, #70ff70, #17b85a);
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(6, 24, 0, 0.1);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   padding: 1.5rem;
-  min-width: 90px; /* Minimum size for images */
-  max-width: 200px; /* Optional: Limit the card size */
+  min-width: 90px;
+  max-width: 200px;
   cursor: pointer;
-  position: relative;
+  background: linear-gradient(to bottom, #70ff70, #17b85a);
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden; /* Ensures transformed content does not overflow */
 }
 
+
 .member img {
+  z-index: 2;
   width: 100%;
   max-width: 150px;
   border-radius: 50%;
@@ -166,9 +187,10 @@ p {
 }
 
 .member h3 {
+  z-index: 3;
   margin-top: 0.5rem;
   font-size:calc(12px + 1.5vw);
-  color: #00aa39;
+  color: #8bfdb1;
 }
 
 /* Form Styles */
