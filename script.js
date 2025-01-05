@@ -226,7 +226,7 @@ goToContactBtn.addEventListener("click", goToContact);
         const body = encodeURIComponent('Message: ' + message);
 
         // Define the recipient email address
-        const email = 'contact.bam.boo@gmail.com';
+        const email = 'mail.bamboopanda@gmail.com';
 
         // Create the mailto link
         const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
