@@ -1,0 +1,297 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+
+  background-image: 
+  /* Grid background (on top of gradient) */
+  repeating-linear-gradient(0deg, rgba(88, 182, 34, 0.619) 0, rgba(44, 151, 17, 0.1) 1px, transparent 1px, transparent 100%), 
+  repeating-linear-gradient(90deg, rgba(94, 231, 39, 0.558) 0, rgba(78, 165, 67, 0.1) 1px, transparent 1px, transparent 100%),
+  /* Gradient background */
+  linear-gradient(to bottom, #f5f5dc, #90fcba);
+  background-size: 40px 40px, 40px 40px, auto, 100% 100%;  /* Grid cell size for the grid lines, full size for the gradient */
+  background-position: 0 0, 0 0, 0 0;  /* Position for all layers */
+  background-repeat: repeat, repeat, no-repeat;  /* Repeat grid, repeat grid, but no-repeat for gradient */
+
+  color: #cce5ff;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  -webkit-user-select: none;  /* Safari/Chrome */
+  -moz-user-select: none;     /* Firefox */
+  -ms-user-select: none;      /* Internet Explorer */
+  user-select: none;          /* Standard syntax */
+}
+#moto{
+  -webkit-user-select:text;  /* Safari/Chrome */
+  -moz-user-select: text;     /* Firefox */
+  -ms-user-select: text;      /* Internet Explorer */
+  user-select: text;          /* Standard syntax */
+}
+#message{
+  min-width: 200px;
+  max-width: 400px;
+  max-height: 400px;
+  min-height: 20px;
+  overflow-y: scroll;
+}
+/* Adjust section height and spacing */
+.section {
+  min-height: 100vh; /* Ensure each section takes up at least the full viewport height */
+  margin-bottom: 50px; /* Space between sections */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Horizontally center content */
+  text-align: center;
+  padding: 20px;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* When active, make the section visible */
+.section.active {
+  opacity: 1; /* Visible when active */
+  transform: translateY(0);
+}
+/* Go to Top Button Styles */
+.go-to-top-btn {
+  position: fixed;
+  bottom: 40px; /* Position at the bottom of the viewport */
+  right: 40px;  /* Position it on the right side */
+  padding: 10px 20px;
+  background-color: #2ecc71;  /* Green theme */
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  display: none; /* Hidden by default */
+  z-index: 10;
+}
+
+.go-to-top-btn:hover {
+  background-color: #27ae60; /* Darker green on hover */
+  transform: scale(1.1); /* Slightly enlarge the button */
+}
+
+.go-to-top-btn:focus {
+  outline: none; /* Remove outline when clicked */
+}
+
+/* Show the button when the user scrolls down */
+.go-to-top-btn.show {
+  display: block;
+}
+#learnmoreBtn{
+}
+#learnmoreBtn:hover{
+  text-shadow: 0 0 4px rgb(97, 238, 54), 0 0 18px rgba(91, 255, 76, 0.788); /* Shine effect */
+  background-color:#3bfc7bbd;
+
+}
+#homeBtn{
+  background-color:#02ff5649;
+  color: #f3f3f3;
+  font-weight: bold;
+}
+#homeBtn:hover{
+  text-shadow: 0 0 4px rgb(97, 238, 54), 0 0 18px rgba(91, 255, 76, 0.788); /* Shine effect */
+  background-color:#3bfc7bbd;
+}
+h1 {
+  font-size: 6vw;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #2ecc71;
+  padding: 10px;
+  margin: 0;
+  color: #2ecc71;
+}
+
+p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 1rem auto;
+  color: #34495e;
+}
+/* Centering and aligning the grid */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 25px;
+}
+
+.member:hover {
+  transform: scale(1.1);
+}
+.member:hover h3 {
+  color: #59ff54;
+  text-shadow: 0 0 4px rgb(97, 238, 54), 0 0 18px rgba(91, 255, 76, 0.788); /* Shine effect */
+}
+
+
+.member {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #70ff70, #17b85a);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(6, 24, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 1.5rem;
+  min-width: 90px; /* Minimum size for images */
+  max-width: 200px; /* Optional: Limit the card size */
+  cursor: pointer;
+  position: relative;
+}
+
+.member img {
+  width: 100%;
+  max-width: 150px;
+  border-radius: 50%;
+  border: 3px solid #34f364;
+  transition: transform 0.3s ease;
+}
+
+.member img:hover {
+  transform: scale(1.1);
+}
+
+.member h3 {
+  margin-top: 0.5rem;
+  font-size:calc(12px + 1.5vw);
+  color: #00aa39;
+}
+
+/* Form Styles */
+form {
+  max-width: 500px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input, textarea, button {
+  font-size: 1rem;
+  padding: 0.8rem;
+  border-radius: 5px;
+  border: 2px solid #2ecc71;
+}
+
+button {
+  background: #2ecc71;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #27ae60;
+}
+
+button:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+}
+
+/* General Button Styles */
+.arrow {
+  width: 0;
+  height: 0;
+
+  background-color: transparent;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  outline: none;
+  left: 50%;
+}
+
+/* First Downward Arrow (Upper Arrow) */
+.arrow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -7.5px;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 25px solid #53ee949d;  /* Green outline for the top arrow */
+}
+
+/* Second Downward Arrow (Lower Arrow) */
+.arrow::after {
+  content: '';
+  position: absolute;
+  top: 18px; /* Adjust the position of the second arrow */
+  left: -7.5px;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 25px solid #48e78a;  /* Green outline for the bottom arrow */
+}
+
+/* Hover effect */
+.gotoContact-btn:hover .arrow{
+  transform: translateY(5px);  /* Slight downward effect to simulate a press */
+  background-color: transparent; /* Ensure background remains transparent */
+}/* Hover effect */
+.gotoContact-btn:hover {
+  background-color: transparent; /* Ensure background remains transparent */
+}
+
+/* Focus effect */
+.arrow:focus {
+  outline: none;
+}
+.gotoContact-btn{
+  height: 100px;
+  background-color: transparent;
+  width: 100%;
+}
+
+
+/* Styling for the Mail Rules section */
+.rules-section {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 200px;
+  margin-top: 20px;
+}
+
+.rules-section h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.rules-section ul {
+  list-style-type: none;
+  padding-left: 20px;
+  font-size: 16px;
+  color: #555;
+}
+
+.rules-section li {
+  margin-bottom: 8px;
+}
+
+.rules-section li:before {
+  content: "• ";
+  color: #007bff; /* Change bullet color */
+  font-weight: bold;
+}

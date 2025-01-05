@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAM! BOO!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="about" class="section">
+        <h1>🐼 Welcome to BAM! BOO! 🐼</h1>
+        <p id="moto">PANDAS ARE LIFE. PANDAS ARE THE WAY.</p>
+        <div>
+            <button id="learnmoreBtn" class="learnmore-btn">Learn more</button>
+            <button id="skipBtn" class="skip-btn">&gt;&gt;</button>
+        </div>
+
+    </div>
+
+    <div id="members" class="section">
+        <h1>🐾 Meet the Members 🐾</h1>
+        <div class="grid">
+            <div class="member">
+                <img src="https://via.placeholder.com/150" alt="Panda 2">
+                <h3>Beany</h3>
+            </div>
+            <div class="member">
+                <img src="https://via.placeholder.com/150" alt="Panda 3">
+                <h3>Misa</h3>
+            </div>
+            <div class="member">
+                <img src="https://via.placeholder.com/150" alt="Panda 4">
+                <h3>Kazumi</h3>
+            </div>            
+            <div class="member">
+                <img src="https://via.placeholder.com/150" alt="Panda 1">
+                <h3>Ziaru</h3>
+            </div>
+        </div>
+        <!-- Downward Pointing Button -->
+        <button title="gtcbtn" id="gotoContactBtn" class="gotoContact-btn">
+            <div id="arrow" class="arrow"></div>
+
+        </button>
+
+    </div>
+
+    <div id="contact" class="section">
+        <h1>📬 Send Us A Letter 📬</h1>
+        <div id="rules" class="rules-section">
+            <h2>Mail Rules:</h2>
+            <ul>
+                <li>No links</li>
+                <li>No attachments</li>
+                <li>No profanity</li>
+            </ul>
+        </div>
+                <form id="contactForm">
+            <input type="text" id="title" placeholder="Title" required>
+            <textarea id="message" placeholder="Message" required></textarea>
+            <button type="button" id="sendButton">Send</button>
+        </form>
+        <p id="messageStatus"></p>
+
+        <!-- Go to Top Button -->
+        <button id="goToTopBtn" class="go-to-top-btn">↑ Go to Top</button>
+    </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
