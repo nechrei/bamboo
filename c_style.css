@@ -360,8 +360,7 @@ pre.image-text{
   right: 0;
   bottom: 0;
   background: radial-gradient(circle, rgba(255, 248, 143, 0.794), rgba(24, 75, 1, 0.597)); /* Softer darkening effect */
-  z-index: 5; /* Make sure it's above the background but below the zoomed image */
-  pointer-events: none; /* Prevent interaction with the overlay */
+  z-index: 0; /* Make sure it's above the background but below the zoomed image */
   transition: opacity 0.5s ease, background 0.5s ease; /* Smooth transition */
   opacity: 0; /* Hidden by default */
   backdrop-filter: blur(30px); /* Apply a blur effect to the background */

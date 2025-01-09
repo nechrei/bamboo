@@ -84,7 +84,7 @@ window.onload = loadImages;
 
 // Add click event listener to handle zoom effect
 gallery.addEventListener('click', (event) => {
-  if (event.target && event.target.tagName === 'IMG') {
+  if (event.target) {
     const imageContainer = event.target.closest('.gallery-item'); // Get the div container
 
     // Check if there's already a zoomed-in container
@@ -92,6 +92,7 @@ gallery.addEventListener('click', (event) => {
 
     // If another container is zoomed in, zoom out of it
     if (currentlyZoomed && currentlyZoomed !== imageContainer) {
+      document.getElementById('vignette').style.zIndex = "0";
       currentlyZoomed.classList.remove('zoomed');
       currentlyZoomed.style.flexDirection = "row"; // Reset text position
     }
@@ -100,11 +101,13 @@ gallery.addEventListener('click', (event) => {
     if (!imageContainer.classList.contains('zoomed')) {
       imageContainer.classList.add('zoomed');
       document.getElementById('vignette').classList.add('show'); // Add vignette effect
+      document.getElementById('vignette').style.zIndex = "5";
       imageContainer.style.flexDirection = "column"; // Reset text position
     } else {
       // If it is already zoomed in, unzoom it
       document.getElementById('vignette').classList.remove('show'); // Remove vignette effect
       imageContainer.classList.remove('zoomed');
+      document.getElementById('vignette').style.zIndex = "0";
       imageContainer.style.flexDirection = "row"; // Reset text position
     }
   }
