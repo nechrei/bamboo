@@ -92,7 +92,7 @@ gallery.addEventListener('click', (event) => {
 
     // If another container is zoomed in, zoom out of it
     if (currentlyZoomed && currentlyZoomed !== imageContainer) {
-      document.getElementById('vignette').style.zIndex = "0";
+      document.getElementById('vignette').style.zIndex = "-99";
       currentlyZoomed.classList.remove('zoomed');
       currentlyZoomed.style.flexDirection = "row"; // Reset text position
     }
@@ -107,7 +107,7 @@ gallery.addEventListener('click', (event) => {
       // If it is already zoomed in, unzoom it
       document.getElementById('vignette').classList.remove('show'); // Remove vignette effect
       imageContainer.classList.remove('zoomed');
-      document.getElementById('vignette').style.zIndex = "0";
+      document.getElementById('vignette').style.zIndex = "-99";
       imageContainer.style.flexDirection = "row"; // Reset text position
     }
   }
