@@ -371,7 +371,7 @@ pre.image-text{
 
 /* Vignette visible state */
 #vignette.show {
-  opacity: 1; /* Display when the vignette is triggered */
+  opacity: 0.95; /* Display when the vignette is triggered */
 }
 
 .galleryDesc {
