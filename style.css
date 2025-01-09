@@ -138,18 +138,25 @@ h1 {
   color: #8bfdb1;
   transition: transform 0.8s ease;
 }
+/* Member image desaturation */
 .member img {
   z-index: 2;
+  opacity: 0.96;
   width: 100%;
   max-width: 150px;
   border-radius: 50%;
   border: 3px solid #34f364;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease; /* Added transition for filter */
+  filter: grayscale(16%); /* Desaturate image */
 }
 
-.member img:hover {
-  transform: scale(1.06);
+/* Member image saturation on hover */
+.member:hover img {
+  opacity: 1;
+  transform: scale(1.1);
+  filter: grayscale(0%); /* Remove grayscale (full saturation) */
 }
+
 
 .member:hover h3 {
   color: #59ff54;
