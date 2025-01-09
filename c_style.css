@@ -301,16 +301,24 @@ button:disabled {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
+}
+
+
+pre.image-text{
+  white-space:pre-wrap;
 }
 
 /* Individual gallery item (div wrapping image) */
 .gallery-item {
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-end;
   position: relative;
-  width: 200px;
-  height: 300px;
-  overflow: hidden; /* Ensure anything outside the div is hidden */
-  border-radius: 10px;
+  height: 200px;
   cursor: zoom-in;
   transform-origin: center left;
   transition: transform 0.3s ease; /* Smooth zoom transition */
@@ -318,22 +326,30 @@ button:disabled {
 
 /* Image styling */
 .gallery-image {
-  width: 100%;
-  height: 100%;
+  width: 120px;
+  height: auto;
+  padding-left: 10%;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
   object-fit: contain;
   transition: transform 0.3s ease; /* Smooth zoom transition */
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 /* Zoomed-in image container styling */
 .gallery-item.zoomed {
-  transform: scale(2);  /* Zoom in the container */
+  height: max-content;
   position: fixed;  /* Fix the container to the screen */
-  transform: translate(-40%, -150%) scale(1.81);  /* Center the zoomed container */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   z-index: 10;  /* Bring to the front */
   cursor: zoom-out;  /* Change cursor when zoomed in */
+}
+.gallery-item.zoomed .gallery-image{
+  padding-left: 0px;
+  width: 300px;
 }
 
 /* Vignette effect as a div */
@@ -343,14 +359,173 @@ button:disabled {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle, rgba(255, 248, 143, 0.199), rgba(24, 75, 1, 0.144)); /* Softer darkening effect */
+  background: radial-gradient(circle, rgba(255, 248, 143, 0.794), rgba(24, 75, 1, 0.597)); /* Softer darkening effect */
   z-index: 5; /* Make sure it's above the background but below the zoomed image */
   pointer-events: none; /* Prevent interaction with the overlay */
   transition: opacity 0.5s ease, background 0.5s ease; /* Smooth transition */
   opacity: 0; /* Hidden by default */
+  backdrop-filter: blur(30px); /* Apply a blur effect to the background */
+  -webkit-backdrop-filter: blur(30px); /* Safari and iOS support */
+
+
 }
 
 /* Vignette visible state */
 #vignette.show {
   opacity: 1; /* Display when the vignette is triggered */
+}
+
+.galleryDesc {
+  display: flex;
+  justify-content: center;
+ flex-direction: column;
+ align-content: center;
+ align-items: center;
+ width: 185px;
+ margin-top: 15px;
+ margin-bottom: 15px;
+ margin-left: 30px;
+ margin-right: 30px;
+}
+.gallery-item.zoomed .image-text {
+  font-size: 20px;
+  text-shadow: 
+    0 0 1.33px #fff,          /* Reduced from 2px */
+    0 0 3.33px #00ff00,       /* Reduced from 5px */
+    0 0 4.67px #00ff00,       /* Reduced from 7px */
+    0 0 8px #00ff00,          /* Reduced from 12px */
+    0 0 10px #00ff00,         /* Reduced from 15px */
+    0 0 11.33px #00ff00,      /* Reduced from 17px */
+    0 0 16.67px #00ff00;      /* Reduced from 25px */
+  text-align: center;
+}
+
+.gallery-item.zoomed .price {
+  text-align: center;
+  font-size: 20px;
+  text-shadow: 
+    0 0 1.33px #fff,          /* Reduced from 2px */
+    0 0 3.33px #fff,          /* Reduced from 5px */
+    0 0 4.67px #ff6600,       /* Reduced from 7px */
+    0 0 6.67px #ff6600,       /* Reduced from 10px */
+    0 0 10px #ff6600,         /* Reduced from 15px */
+    0 0 13.33px #ff6600,      /* Reduced from 20px */
+    0 0 16.67px #ff6600;      /* Reduced from 25px */
+}
+
+
+.gallery-item .image-text {
+  display: block;
+  text-align: left;
+  width: 100%;
+  font-size: 14px;
+  color: #333;
+  align-content: center;
+  font-family: 'Poppins', sans-serif; /* Apply fancy font */
+
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  text-shadow: 
+  0 0 2px #fff,          /* Reduced from 5px */
+  0 0 5px #00ff00,       /* Reduced from 10px */
+  0 0 7px #00ff00,       /* Reduced from 15px */
+  0 0 12px #00ff00,      /* Reduced from 25px */
+  0 0 15px #00ff00,      /* Reduced from 30px */
+  0 0 17px #00ff00,      /* Reduced from 35px */
+  0 0 25px #00ff00;      /* Reduced from 50px */
+
+  animation: neonAnimation 1.5s ease-in-out infinite alternate; /* Neon flicker effect */
+}
+
+.gallery-item .price {
+  font-family: 'Poppins', sans-serif; /* Apply fancy font */
+  text-align: left;
+
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;  /* Stylish red color for the price */
+  transition: opacity 0.3s ease;
+
+  text-shadow: 
+  0 0 2px #fff,          /* Reduced from 5px */
+  0 0 5px #fff,          /* Reduced from 10px */
+  0 0 7px #ff6600,       /* Reduced from 15px */
+  0 0 10px #ff6600,      /* Reduced from 20px */
+  0 0 15px #ff6600,      /* Reduced from 30px */
+  0 0 20px #ff6600,      /* Reduced from 40px */
+  0 0 25px #ff6600;      /* Reduced from 50px */
+
+  animation: neonAnimation2 1.5s ease-in-out infinite alternate; /* Neon flicker effect */
+}
+/* Keyframes for the flicker effect (Half Pixel Size) */
+@keyframes neonAnimation2 {
+  0% {
+    text-shadow: 
+      0 0 1px #fff,          /* Reduced from 2px */
+      0 0 2px #fff,          /* Reduced from 5px */
+      0 0 3px #ff6600,       /* Reduced from 7px */
+      0 0 5px #ff6600,       /* Reduced from 10px */
+      0 0 7px #ff6600,       /* Reduced from 15px */
+      0 0 10px #ff6600,      /* Reduced from 20px */
+      0 0 12px #ff6600;      /* Reduced from 25px */
+  }
+  50% {
+    text-shadow: 
+      0 0 1px #fff,          /* Reduced from 2px */
+      0 0 2px #ff6600,       /* Reduced from 5px */
+      0 0 3px #ff6600,       /* Reduced from 7px */
+      0 0 6px #ff6600,       /* Reduced from 12px */
+      0 0 7px #ff6600,       /* Reduced from 15px */
+      0 0 8px #ff6600,       /* Reduced from 17px */
+      0 0 12px #ff6600;      /* Reduced from 25px */
+  }
+  100% {
+    text-shadow: 
+      0 0 1px #fff,          /* Reduced from 2px */
+      0 0 2px #fff,          /* Reduced from 5px */
+      0 0 3px #ff6600,       /* Reduced from 7px */
+      0 0 5px #ff6600,       /* Reduced from 10px */
+      0 0 7px #ff6600,       /* Reduced from 15px */
+      0 0 10px #ff6600,      /* Reduced from 20px */
+      0 0 12px #ff6600;      /* Reduced from 25px */
+  }
+}
+
+
+/* Keyframes for the flicker effect (Half Pixel Size) */
+@keyframes neonAnimation {
+  0% {
+    text-shadow: 
+      0 0 2px #fff,          /* Reduced from 5px */
+      0 0 5px #fff,          /* Reduced from 10px */
+      0 0 7px #00ff00,       /* Reduced from 15px */
+      0 0 10px #00ff00,      /* Reduced from 20px */
+      0 0 15px #00ff00,      /* Reduced from 30px */
+      0 0 20px #00ff00,      /* Reduced from 40px */
+      0 0 25px #00ff00;      /* Reduced from 50px */
+  }
+  50% {
+    text-shadow: 
+      0 0 2px #fff,          /* Reduced from 5px */
+      0 0 5px #00ff00,       /* Reduced from 10px */
+      0 0 7px #00ff00,       /* Reduced from 15px */
+      0 0 12px #00ff00,      /* Reduced from 25px */
+      0 0 15px #00ff00,      /* Reduced from 30px */
+      0 0 17px #00ff00,      /* Reduced from 35px */
+      0 0 25px #00ff00;      /* Reduced from 50px */
+  }
+  100% {
+    text-shadow: 
+      0 0 2px #fff,          /* Reduced from 5px */
+      0 0 5px #fff,          /* Reduced from 10px */
+      0 0 7px #00ff00,       /* Reduced from 15px */
+      0 0 10px #00ff00,      /* Reduced from 20px */
+      0 0 15px #00ff00,      /* Reduced from 30px */
+      0 0 20px #00ff00,      /* Reduced from 40px */
+      0 0 25px #00ff00;      /* Reduced from 50px */
+  }
 }
