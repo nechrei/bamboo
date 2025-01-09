@@ -21,10 +21,17 @@ body {
   user-select: none;          /* Standard syntax */
 }
 #moto{
+  font-family: 'Poppins', sans-serif; /* Apply fancy font */
   -webkit-user-select:text;  /* Safari/Chrome */
   -moz-user-select: text;     /* Firefox */
   -ms-user-select: text;      /* Internet Explorer */
   user-select: text;          /* Standard syntax */
+}
+p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 1rem auto;
+  color: #0fc66b;
 }
 #message{
   min-width: 200px;
@@ -110,12 +117,7 @@ h1 {
   color: #2ecc71;
 }
 
-p {
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin: 1rem auto;
-  color: #34495e;
-}
+
 /* Centering and aligning the grid */
 .grid {
   display: flex;
@@ -129,12 +131,33 @@ p {
 .member:hover {
   transform: scale(1.1);
 }
+.member h3 {
+  z-index: 3;
+  margin-top: 0.5rem;
+  font-size:calc(12px + 1.5vw);
+  color: #8bfdb1;
+  transition: transform 0.8s ease;
+}
+.member img {
+  z-index: 2;
+  width: 100%;
+  max-width: 150px;
+  border-radius: 50%;
+  border: 3px solid #34f364;
+  transition: transform 0.3s ease;
+}
+
+.member img:hover {
+  transform: scale(1.06);
+}
+
 .member:hover h3 {
   color: #59ff54;
   text-shadow: 0 0 4px rgb(97, 238, 54), 0 0 18px rgba(91, 255, 76, 0.788); /* Shine effect */
+  transform: scale(1.07); /* Slightly enlarge the button */
 }
 .member:hover .overlay-image {
-  opacity: 0.45; /* Adjust transparency */
+  opacity: 0.65; /* Adjust transparency */
   transform: scale(1.175);
 }
 .member .overlay-image {
@@ -146,7 +169,7 @@ p {
   background-image: url('WebsiteArts01/bamboostick01.png');
   background-size: cover;
   background-position: center;
-  opacity: 0.3; /* Adjust transparency */
+  opacity: 0.225; /* Adjust transparency */
   z-index: 1; /* Keep it below the content but above the background */
   pointer-events: none; /* Optional: Prevent interaction with this layer */
   transition: transform 0.4s ease-out ;
@@ -172,26 +195,6 @@ p {
   overflow: hidden; /* Ensures transformed content does not overflow */
 }
 
-
-.member img {
-  z-index: 2;
-  width: 100%;
-  max-width: 150px;
-  border-radius: 50%;
-  border: 3px solid #34f364;
-  transition: transform 0.3s ease;
-}
-
-.member img:hover {
-  transform: scale(1.1);
-}
-
-.member h3 {
-  z-index: 3;
-  margin-top: 0.5rem;
-  font-size:calc(12px + 1.5vw);
-  color: #8bfdb1;
-}
 
 /* Form Styles */
 form {
