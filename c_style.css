@@ -9,7 +9,7 @@ body {
   repeating-linear-gradient(90deg, rgba(94, 231, 39, 0.558) 0, rgba(78, 165, 67, 0.1) 1px, transparent 1px, transparent 100%),
   /* Gradient background */
   linear-gradient(to bottom, #f5f5dc, #90fcba);
-  background-size: 40px 40px, 40px 40px, auto, 100% 100%;  /* Grid cell size for the grid lines, full size for the gradient */
+  background-size: 40px 100px, 40px 40px, auto, 100% 100%;  /* Grid cell size for the grid lines, full size for the gradient */
   background-position: 0 0, 0 0, 0 0;  /* Position for all layers */
   background-repeat: repeat, repeat, no-repeat;  /* Repeat grid, repeat grid, but no-repeat for gradient */
   color: #cce5ff;
@@ -30,7 +30,7 @@ p {
   font-size: 1.1rem;
   max-width: 700px;
   margin: 1rem auto;
-  color: #1cd478;
+  color: #26d67e;
 }
 #message{
   min-width: 200px;
